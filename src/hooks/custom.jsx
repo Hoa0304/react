@@ -1,7 +1,10 @@
 function useMagicColor() {
+    // eslint-disable-next-line no-undef
     const [color, setColor] = useState('green');
+    // eslint-disable-next-line no-undef
     useEffect(() => {
         const intervalRef = setInterval(() => {
+            // eslint-disable-next-line no-undef
             const newColor = randomColor();
             setColor(newColor);
         }, 2000);
@@ -13,17 +16,21 @@ function useMagicColor() {
     return color;
 }
 // component
+// eslint-disable-next-line react-refresh/only-export-components, no-unused-vars
 function MagicBox() {
     const color = useMagicColor();
-    return <div class="magic-box" style={{ backgroundColor: color }}></div>
+    return <div className="magic-box" style={{ backgroundColor: color }}></div>
 }
 // sang custom hooks
 function useClock() {
+    // eslint-disable-next-line no-undef
     const [timeString, setTimeString] = useState('');
+    // eslint-disable-next-line no-undef
     useEffect(() => {
         const clockInterval = setInterval(() => {
             const now = new Date();
             // HH:mm:ss
+            // eslint-disable-next-line no-undef
             const newTimeString = formatDate(now);
             setTimeString(newTimeString);
         }, 1000);
@@ -36,6 +43,7 @@ function useClock() {
     return { timeString };
 }
 //sử dụng component clock
+// eslint-disable-next-line react-refresh/only-export-components, no-unused-vars
 function Clock() {
     const { timeString } = useClock();
     return (
@@ -43,6 +51,7 @@ function Clock() {
     );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components, no-unused-vars
 function BetterClock() {
     const { timeString } = useClock();
     return (
